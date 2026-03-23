@@ -1,9 +1,0 @@
-## Vector DB Use Case
-
-A traditional keyword-based database search would not be sufficient for searching large legal contracts using natural language queries. Keyword search relies on exact word matching, which means it may miss relevant information if the wording in the contract differs from the query. For example, in legal documents, a query like "termination clauses" may not match sections labeled as "contract cancellation terms" or "agreement termination conditions," even though they carry the same legal meaning, it might not match sections labeled as "contract cancellation terms" or "agreement ending conditions," even though they are semantically similar.
-
-A vector database solves this problem by enabling semantic search. It converts both the contract text and user queries into embeddings, which are numerical representations capturing the meaning of the text. This allows the system to find relevant sections based on context and intent rather than exact keywords. For instance, even if the wording differs, the vector database can still identify similar meanings and return accurate results.
-
-In this system, the 500-page contracts would first be broken into smaller chunks and converted into embeddings using a model like sentence-transformers. These embeddings would then be stored in a vector database such as Pinecone or Milvus. When a lawyer asks a question, the query is also converted into an embedding, and the system retrieves the most similar text chunks based on cosine similarity.
-
-Thus, a vector database plays a crucial role in enabling efficient, accurate, and context-aware search over large legal contracts. It allows lawyers to retrieve relevant clauses quickly, improving productivity and reducing the time required for manual document review. This is not possible with traditional keyword-based approaches.
